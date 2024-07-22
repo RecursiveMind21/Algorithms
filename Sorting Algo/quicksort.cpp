@@ -31,20 +31,37 @@ int parition(vector<int>&arr, int start, int end){
 void quickSort(vector<int> &arr, int start , int end){
 
     if(start >= end){
+    //     cout << "---------------------------" << endl;
+    //     cout << "Start base: " << start << " ";
+    //     cout << "end base: " << end << " ";
+    //         cout << endl;
+    // cout << "---------------------------" << endl;
         return ;
     }
     
     int count = parition(arr,start,end);
 
+    // cout << "count:"  << count << " " << endl;
+
+    // cout << "---------------------------" << endl;
+    // cout << "Start left: " << start << " ";
+    // cout << "end left: " << end << " ";
+    // cout << endl;
+    // cout << "---------------------------" << endl;
     //left part
     quickSort(arr,start,count-1);
+    // cout << "---------------------------" << endl;
+    // cout << "Start right: " << start << " ";
+    // cout << "end right: " << end << " ";
+    // cout << endl;
+    // cout << "---------------------------" << endl;
     //right part
     quickSort(arr,count+1,end);
 
 }   
 
 int main(){
-    vector<int> arr{10,4,5,8,23,80};
+    vector<int> arr{5,2,3,1,9,4};
     int size = arr.size();
 
     cout << "Before Sorting: ";
